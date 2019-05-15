@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.02610789914347285 -0.9940984458873963 -0.1052931977222543 3.6832296874967443
-  position 1.7341786630068363 1.1267616543836332 -2.9007194845639113
+  orientation 0.004601181490769004 -0.9993647852101619 -0.035339145585823115 3.575593099314205
+  position 1.5555725807089698 0.613261251829538 -3.1404880910514574
 }
 TexturedBackground {
 }
@@ -14,9 +14,9 @@ Floor {
 Solid {
   translation 0.22322602333263708 0.5999999999999561 -0.22939217874296203
   children [
-    Group {
+    DEF GR_OBJECT Group {
       children [
-        Shape {
+        DEF S_CYL1 Shape {
           appearance PBRAppearance {
             baseColor 0.4470588235294118 0.6235294117647059 0.8117647058823529
           }
@@ -25,7 +25,7 @@ Solid {
             radius 0.05
           }
         }
-        Transform {
+        DEF S_SPHERE1 Transform {
           translation 0 0.15 0
           children [
             Shape {
@@ -38,7 +38,7 @@ Solid {
             }
           ]
         }
-        Transform {
+        DEF S_SPHERE2 Transform {
           translation 0 -0.15 0
           children [
             Shape {
@@ -54,4 +54,9 @@ Solid {
       ]
     }
   ]
+  boundingObject USE GR_OBJECT
+  physics Physics {
+    density -1
+    mass 1
+  }
 }
