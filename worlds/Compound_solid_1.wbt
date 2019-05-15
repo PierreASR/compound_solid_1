@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.004601181490769004 -0.9993647852101619 -0.035339145585823115 3.575593099314205
-  position 1.5555725807089698 0.613261251829538 -3.1404880910514574
+  orientation 0.006700146787162348 -0.9998778759674701 -0.014118823740347642 4.543219681765677
+  position 2.354060535766163 0.5722756449882828 -0.531996418020364
 }
 TexturedBackground {
 }
@@ -12,43 +12,88 @@ TexturedBackgroundLight {
 Floor {
 }
 Solid {
-  translation 0.22322602333263708 0.5999999999999561 -0.22939217874296203
+  translation 0.24544889365597103 0.5999999999999561 -0.2737920357083077
+  rotation 0 1 0 -1.7016996938995748
   children [
     DEF GR_OBJECT Group {
       children [
         DEF S_CYL1 Shape {
-          appearance PBRAppearance {
+          appearance DEF BLUE_CYLINDER PBRAppearance {
             baseColor 0.4470588235294118 0.6235294117647059 0.8117647058823529
+            transparency 0.5
           }
-          geometry Cylinder {
-            height 0.30000000000000004
-            radius 0.05
+          geometry DEF CYLINDER Cylinder {
+            height 0.36
+            radius 0.03
           }
         }
         DEF S_SPHERE1 Transform {
-          translation 0 0.15 0
+          translation 0 0.18 0
           children [
             Shape {
               appearance PBRAppearance {
                 baseColor 0.9372549019607843 0.1607843137254902 0.1607843137254902
+                transparency 0.3
               }
               geometry Sphere {
-                radius 0.1
+                radius 0.08
               }
             }
           ]
         }
         DEF S_SPHERE2 Transform {
-          translation 0 -0.15 0
+          translation 0 -0.18 0
           children [
             Shape {
-              appearance PBRAppearance {
+              appearance DEF RED_SPHERE PBRAppearance {
                 baseColor 0.9372549019607843 0.1607843137254902 0.1607843137254902
+                transparency 0.2
               }
-              geometry Sphere {
-                radius 0.1
+              geometry DEF SPHERE Sphere {
+                radius 0.08
               }
             }
+          ]
+        }
+        DEF S_CYL2 Transform {
+          translation 0 0.18 0.18
+          rotation 1 0 0 1.5707996938995747
+          children [
+            Shape {
+              appearance USE BLUE_CYLINDER
+              geometry USE CYLINDER
+            }
+          ]
+        }
+        DEF S_SPHERE3 Transform {
+          translation 0 0.18 0.36
+          children [
+            Shape {
+              appearance USE RED_SPHERE
+              geometry USE SPHERE
+            }
+          ]
+        }
+        DEF S_CYL3 Transform {
+          translation 0 0 0.36
+          children [
+            USE S_CYL1
+          ]
+        }
+        DEF S_SPHERE4 Transform {
+          translation 0 -0.18 0.36
+          children [
+            Shape {
+              appearance USE RED_SPHERE
+              geometry USE SPHERE
+            }
+          ]
+        }
+        DEF S_CYL4 Transform {
+          translation 0 -0.18 0.18
+          rotation 1 0 0 1.5707996938995747
+          children [
+            USE S_CYL1
           ]
         }
       ]
@@ -59,4 +104,20 @@ Solid {
     density -1
     mass 1
   }
+}
+Solid {
+  translation 0.09444411820363935 0.6000000000000003 0.06400113026976388
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.9882352941176471 0.9137254901960784 0.30980392156862746
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.2 0.2 0.2
+      }
+    }
+  ]
+  name "solid(1)"
 }
