@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.006700146787162348 -0.9998778759674701 -0.014118823740347642 4.543219681765677
-  position 2.354060535766163 0.5722756449882828 -0.531996418020364
+  orientation -0.5870964950426852 -0.7872766194193421 -0.1884495423826931 0.8054144537570751
+  position -0.9880350929166025 1.4050281284502815 1.7106609959388137
 }
 TexturedBackground {
 }
@@ -12,8 +12,8 @@ TexturedBackgroundLight {
 Floor {
 }
 Solid {
-  translation 0.24544889365597103 0.5999999999999561 -0.2737920357083077
-  rotation 0 1 0 -1.7016996938995748
+  translation 0.3176006703003169 0.5999999999999561 -0.28465617752751715
+  rotation 0 -1 0 1.5708003061004252
   children [
     DEF GR_OBJECT Group {
       children [
@@ -96,6 +96,96 @@ Solid {
             USE S_CYL1
           ]
         }
+        DEF S_CYL5 Transform {
+          translation 0.18 0.18 0
+          rotation -0.5773510442335908 0.5773510303918982 -0.5773487329403223 4.188787921173387
+          children [
+            USE S_CYL1
+          ]
+        }
+        DEF S_CYL6 Transform {
+          translation 0.18 0.18 0.36
+          rotation 0 0 1 1.5708003061004252
+          children [
+            USE S_CYL1
+          ]
+        }
+        DEF S_CYL7 Transform {
+          translation 0.18 -0.18 0
+          rotation 0 0 1 1.5708003061004252
+          children [
+            USE S_CYL1
+          ]
+        }
+        DEF S_CYL8 Transform {
+          translation 0.18 -0.18 0.36
+          rotation 0 0 1 1.5707996938995747
+          children [
+            USE S_CYL1
+          ]
+        }
+        DEF S_SPHERE5 Transform {
+          translation 0.36 -0.18 0
+          children [
+            Shape {
+              appearance USE RED_SPHERE
+              geometry USE SPHERE
+            }
+          ]
+        }
+        DEF S_SPHERE6 Transform {
+          translation 0.36 -0.18 0.36
+          children [
+            Shape {
+              appearance USE RED_SPHERE
+              geometry USE SPHERE
+            }
+          ]
+        }
+        DEF S_SPHERE7 Transform {
+          translation 0.36 0.18 0
+          children [
+            Shape {
+              appearance USE RED_SPHERE
+              geometry USE SPHERE
+            }
+          ]
+        }
+        DEF S_SPHERE8 Transform {
+          translation 0.36 0.18 0.36
+          children [
+            Shape {
+              appearance USE RED_SPHERE
+              geometry USE SPHERE
+            }
+          ]
+        }
+        DEF S_CYL9 Transform {
+          translation 0.36 0 0
+          children [
+            USE S_CYL1
+          ]
+        }
+        DEF S_CYL10 Transform {
+          translation 0.36 0 0.36
+          children [
+            USE S_CYL1
+          ]
+        }
+        DEF S_CYL11 Transform {
+          translation 0.36 0.18 0.18
+          rotation 1 0 0 1.5707996938995747
+          children [
+            USE S_CYL1
+          ]
+        }
+        DEF S_CYL12 Transform {
+          translation 0.36 -0.18 0.18
+          rotation 1 0 0 1.5707996938995747
+          children [
+            USE S_CYL1
+          ]
+        }
       ]
     }
   ]
@@ -106,7 +196,8 @@ Solid {
   }
 }
 Solid {
-  translation 0.09444411820363935 0.6000000000000003 0.06400113026976388
+  translation 0.14730478629906693 0.5999999999999981 -0.110708745157862
+  rotation 0 1 0 6.283185307179586
   children [
     Shape {
       appearance PBRAppearance {
